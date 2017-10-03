@@ -1,0 +1,31 @@
+JMP MAIN
+FirstFunction:
+MOVI R00 151
+MOVI R06 10
+MOVI R07 100
+RET
+SecondFunction:
+IN R00 						
+CMP R07 R00
+JNQ FirstFunction
+L2:							
+ADDI R12 1
+RET
+L3: 
+CMP R11 R05				
+JLT L4
+CMP R08 R12						
+JLT  L2
+L4:
+IN R01					
+CMP R05 R01
+JGT L2
+ADD R11 R01					     
+RET
+MAIN:
+IN R02
+MSF
+JMP FirstFunction
+CMP R06 R02
+MOVI R13 0
+HLT

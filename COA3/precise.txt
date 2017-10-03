@@ -1,0 +1,12 @@
+MOVI  	R06  10						//water container capacity 					
+precisefill:
+IN     R02						//take vol of water required 
+CMP    RO2      R06
+JGT  L5
+MOVI	 0  	     R13						//R13 represents the container
+L6:
+INC R13
+CMP     R13      R02				//compare current water level with water required
+JNQ L6
+SUB   R02        R06
+//add printf to show water left

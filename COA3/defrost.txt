@@ -1,0 +1,9 @@
+MOV    R12     0				//set timer ie will initialise registeR R12 with 0
+defrost:
+IN   R19     				 //set time for defrost in hours
+MOV  R20     60
+MUL  R20     R19
+L12:
+ADDI  R12  1 
+CMP  R12      R19
+JNQ L12

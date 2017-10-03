@@ -1,0 +1,7 @@
+MOVI   R16     3       						//initial temperature of refrigerator
+MOVI    R14    10 						//temperature
+setTemp:     						
+IN   R18					//temperature
+CMP    R18      R14
+JGT    setTemp
+MOV     R16      R18			//change the temp

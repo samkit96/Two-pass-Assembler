@@ -1,0 +1,13 @@
+
+MOVI   R05 150 //storage capacity 
+MOVI    R11    0      						//set current load zero
+addLoad:
+CMP   R11       R05                            //compare current load and storage capacity						
+JLT L4
+RET										//Return ??
+L4:
+IN    R01						//input 
+CMP   R01       R05
+JGT   L4
+ADD   R01       R11	
+	
